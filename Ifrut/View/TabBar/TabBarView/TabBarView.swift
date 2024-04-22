@@ -8,8 +8,43 @@
 import SwiftUI
 
 struct TabBarView: View {
+    
+    @State private var selectedTab = 0
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        TabView(selection: $selectedTab) {
+            
+            HomeView()
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Home")
+                }
+                .tag(0)
+            
+            
+            SearchView()
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                    Text("Search")
+                }
+                .tag(1)
+            
+           CarrinhoView()
+                .tabItem {
+                    Image(systemName: "cart")
+                    Text("Carrinho")
+                }
+                .tag(2)
+            
+            PerfilView()
+                .tabItem {
+                    Image(systemName: "person")
+                    Text("Perfil")
+                }
+                .tag(3)
+
+        }
+        .navigationBarBackButtonHidden(false)
     }
 }
 

@@ -12,7 +12,7 @@ struct IfrutApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                WelcomeView()
+                TabBarView()
             }
             
         }

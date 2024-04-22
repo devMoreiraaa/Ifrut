@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct SearchView: View {
+    
+    @State private var Search = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            ScrollView(showsIndicators: false) {
+                
+                VStack{
+                    Text("ola mundo")
+                }
+            }
+            .navigationTitle("Search")
+            .navigationBarTitleDisplayMode(.inline)
+            .searchable(text: $Search, prompt: "Pesquisar seu Produto")
+        }
+        
     }
 }
 
