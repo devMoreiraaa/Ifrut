@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ProductCell: View {
     
-    var product: Produtos
+    let  product: Produtos
     @State private var selectedCoracao = false
     let valor: Double = 12.99
+    
     var body: some View {
         
         VStack{
@@ -54,7 +55,7 @@ struct ProductCell: View {
                 
                
                 
-                Text("4.5")
+                Text("\(product.stars)")
                     .font(.footnote)
                     .foregroundStyle(.gray)
             }
@@ -95,5 +96,7 @@ func formatarDecimal(_ valor: Double, casaDecimal: Int) -> String {
 }
 
 #Preview {
-    ProductCell(product: produto[0])
+    ProductCell(product: Produtos(id: 1, nome: "Tomate", minutos: "20min", imagem: "tomate", stars: 4.5, preco: 12.00))
+    
+        
 }

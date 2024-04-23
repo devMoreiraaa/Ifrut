@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @State private var search = ""
-    
+
     @State private var SelectedProdutos: FiltroDeProdutos = .Vegetais
     @Namespace var animation
     @State private var columns: [GridItem] = [.init(),.init(),]
@@ -126,9 +126,9 @@ struct HomeView: View {
                     ScrollView(.vertical, showsIndicators: false) {
                         LazyVGrid(columns: columns, spacing: 10) {
                                   
-                            ForEach(0...5, id: \.self) { index in
+                            ForEach(produto) { Produto in
                                 
-                                ProductCell(product: produto[1])
+                                ProductCell(product: Produto)
                                 
                             }
                             

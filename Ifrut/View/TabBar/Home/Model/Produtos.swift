@@ -17,7 +17,7 @@ struct Produtos:  Identifiable {
     let preco: Double
 }
 
-var produto = [
+let produto: [Produtos] = [
 
     Produtos(id: 0, nome: "Tomate", minutos: "20min", imagem: "tomate" , stars: 4.5, preco: 12.00),
     Produtos(id: 1, nome: "Alface", minutos: "30min", imagem: "alface" , stars: 5.0, preco: 9.00),
